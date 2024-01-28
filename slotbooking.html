@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Slot Booking | Prakriti</title>
+    <link rel="stylesheet" href="slotbooking.css" />
+</head>
+<body>
+    
+    <section class="main">
+        
+        <div class="main-top">
+            <h1>Book Your Slot</h1>
+        </div>
+        <form id="slotBookingForm">
+            <label for="patientName">Patient Name:</label>
+            <!-- Remove the "readonly" attribute to allow user input -->
+            <input type="text" id="patientName" name="patientName" required>
+
+            <label for="appointmentDate">Preferred Date:</label>
+            <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+            <label for="appointmentTime">Preferred Time:</label>
+            <input type="time" id="appointmentTime" name="appointmentTime" required>
+
+            <label for="appointmentType">Type of Service:</label>
+            <select id="appointmentType" name="appointmentType" required>
+                <option value="" disabled selected>Select Service Type</option>
+                <option value="consultation">Ayurvedic Consultation</option>
+                <option value="massage">Massage</option>
+                <option value="treatment">Specific Treatment</option>
+            </select>
+
+            <!-- Add Preferred Doctor field -->
+            <label for="preferredDoctor">Preferred Doctor:</label>
+            <select id="preferredDoctor" name="preferredDoctor" required>
+                <option value="" disabled selected>Select Preferred Doctor</option>
+                <!-- Doctors' names will be dynamically added here -->
+            </select>
+            <label for ="username">username : </label>
+            <!-- Remove the "readonly" attribute to allow user input -->
+            <input type="text" id="username" name="username" required>
+            <label for="mode">Mode:</label>
+            <select id="mode" name="mode" required>
+                <option value="" disabled selected>Select mode</option>
+                <option value="online">Online</option>
+                <option value="offline">Offline</option>
+            </select>
+
+            <button type="submit">Book Slot</button>
+        </form>
+    </section>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <script src="slotbooking.js"></script>
+    
+</body>
+</html>
+

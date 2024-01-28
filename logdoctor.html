@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="logpatient.css" />
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        nav {
+            width: 20%;
+            background-color: #333;
+            padding-top: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        nav input, nav button {
+            margin-bottom: 10px;
+        }
+
+        .main {
+            width: 80%;
+            padding: 20px;
+        }
+
+        #map {
+            height: 300px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Adjust the width as needed */
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <img src="prakritiintro.png" alt="">
+                <h1>Prakriti</h1>
+            </div>
+            <ul>
+                <li>
+                    <a href="docdashboard.html">
+                        <i class="fas fa-user"></i>
+                        <span class="nav-item">Profile</span>
+                    </a>
+                </li>
+                <li><a href="enteraddress.html">
+                    <i class="fas fa-map-marker"></i>
+                    <span class="nav-item">Enter Address</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="fas fa-chart-bar"></i>
+                    <span class="nav-item">Analytics</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="fas fa-tasks"></i>
+                    <span class="nav-item">Slot Booking</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="fas fa-cog"></i>
+                    <span class="nav-item">Setting</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="fas fa-question-circle"></i>
+                    <span class="nav-item">Help</span>
+                </a></li>
+                <li><a href="#" class="logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="nav-item">Logout</span>
+                </a></li>
+            </ul>
+        </nav>
+
+        <section class="main">
+            <div class="main-top">
+                <p>Get your holistic experience here!</p>
+            </div>
+            <h1>Welcome to the Doctor Dashboard!</h1>
+
+            <table border="1" id="appointmentsTable">
+                <thead>
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Service Type</th>
+                        <th>Mode</th>
+                        <th>Patient Report</th>
+                        <th>Appointment Status</th>
+                    </tr>
+                </thead>
+                <tbody id="bookedSlotsContainer">
+                    <!-- Appointments will be dynamically added here -->
+                </tbody>
+            </table>
+
+            <!-- Map section -->
+            <div id="map"></div>
+        </section>
+    
+</div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span id="closeButton" class="close">&times;</span>
+        <div id="modalContent">
+            <!-- Add any additional content or elements you want in the modal -->
+        </div>
+    </div>
+</div> 
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="logdoctor.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script src="https://mediafiles.botpress.cloud/4f474b3a-b3b6-48c1-b20b-e70fdf188640/webchat/config.js" defer></script>
+</body>
+</html>

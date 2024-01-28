@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto:wght@500&display=swap');
+
+:root {
+    --darkCyan: #f6f4c3;
+    --suma: red;
+    --initalFontSize: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    position: relative;
+    background: var(--darkCyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../img/bg-pattern-top.svg'), url('../img/bg-pattern-bottom.svg');
+    background-position: top 150% left -100%, bottom 150% right -100%;
+    background-repeat: no-repeat, no-repeat;
+    background-color: var(--darkCyan);
+    padding: 0 10px;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.card {
+    background: url('../img/bg-pattern-card.svg');
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.171);
+    height: 70vh;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-header {
+    height: 40%;
+}
+
+.card-profile {
+    background: #4a785e;
+    position: relative;
+    text-align: center;
+    display: flex;
+    height: 40%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease-in-out;
+}
+
+.card-profile:hover {
+    background: #6b9c7d;
+}
+
+.image-profile {
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-profile:hover .profile-img {
+    transform: scale(1.1);
+}
+
+.profile-image-label {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.upload-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+}
+
+.image-profile:hover .upload-btn {
+    display: block;
+}
+
+.card-profile-info {
+    margin-top: 10px;
+}
+
+#userName {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: black;
+}
+
+#userGender {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: black;
+}
+
+#userAge {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: black;
+}
+
+#email {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: black;
+}
+
+.card-footer {
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #4a785e;
+    border-top: 0.1px solid rgb(190, 189, 189);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 0 20px;
+}
+
+@media(max-width: 1000px) {
+    body {
+        background-position: top 170% left -25rem, bottom 170% right -25rem;
+    }
+
+    .container {
+        max-width: 80%;
+    }
+}
+
+@media(max-width: 375px) {
+    body {
+        background-position: top 110% left -50rem, bottom 150% right -45rem;
+    }
+
+    .container {
+        max-width: 90%;
+    }
+}

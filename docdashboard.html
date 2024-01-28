@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Desktop design | First Assignment</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header"></div>
+            <div class="card-profile">
+                <div class="image-profile">
+                    <!-- Removed the "Choose File" input element -->
+                    <label for="profileImageInput" class="profile-image-label">
+                        <img class="profile-img" id="profileImage" src="maleprofile.jpg" alt="user-Image victor">
+                        <span class="upload-btn">Upload Image</span>
+                    </label>
+                    <input type="file" id="profileImageInput" accept="image/*" onchange="previewProfileImage(this)" style="display: none;">
+                </div>
+                <div class="card-profile-info">
+                    <h2 id="userName">Name : </h2>
+                    <p id="userGender">Gender : </p>
+                    <p id="userAge">Age : </p>
+                    <p id="email">Mail ID : </p>
+
+                    
+                </div>
+                
+            </div>
+            <!-- <hr> -->
+            <div class="card-footer">
+                <div class="statics">
+                    <h2>170</h2>
+                    <p><span>HEIGHT</span></p>
+                </div>
+                <div class="statics">
+                    <h2>57</h2>
+                    <p><span>WEIGHT</span></p>
+                </div>
+                <div class="statics">
+                    <h2>B+</h2>
+                    <p><span>BLOOD GROUP</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<script>
+        function previewProfileImage(input) {
+            const file = input.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    document.getElementById('profileImage').src = e.target.result;
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>-->
+    
+</body>
+<!-- Add this script tag in the head section of your HTML -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<script src="dashboard.js"></script>
+</html>

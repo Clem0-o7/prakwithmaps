@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #f6f4c3, #b4daa7);
+}
+
+.container {
+  display: flex;
+}
+
+nav {
+  background: linear-gradient(to right, #4a785e, #6b9c7d);
+  height: 100vh;
+  width: 250px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  color: #b4daa7;
+  font-size: 24px;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+li:hover {
+  transform: scale(1.1);
+}
+
+a {
+  text-decoration: none;
+  color: #b4daa7;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 10px;
+}
+
+.logout {
+  color: #f44336; /* Red color for logout */
+}
+
+.main {
+  padding: 20px;
+  text-align: center;
+}
+
+.main-top {
+  background: linear-gradient(to bottom right, #4a785e, #6b9c7d);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #b4daa7;
+  align-items: center;
+  display: inline-block;
+}
+
+h1 {
+  color: #4a785e;
+  margin-top: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #4a785e;
+  padding: 15px;
+  text-align: left;
+}
+
+thead {
+  background: linear-gradient(to right, #b4daa7, #4a785e);
+  color: #fff;
+}
+
+/* Add this CSS to your existing logpatient.css or create a new CSS file */
+
+#appointmentsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#appointmentsTable th, #appointmentsTable td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+#appointmentsTable th {
+  background-color:#f6f4c3;
+  color: black;
+}
+
+#bookedSlotsContainer tr:nth-child(even) {
+  background-color: #6b9c7d;
+}
+
+
+/* Add these styles to your existing CSS */
+
+/* Update the styles to use one of the green shades */
+.styledViewButton {
+  background-color: #4a6d3f; /* Use one of the green shades */
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.styledViewButton:hover {
+  background-color: #94c688; /* Use a slightly darker shade on hover */
+  transform: scale(1.05);
+}
